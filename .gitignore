@@ -1,0 +1,32 @@
+# Runtime secrets and local deployment overrides
+.env
+secrets.env
+config/secrets.env
+compose.override.yaml
+
+# Runtime configuration (keep sanitized examples tracked)
+config/channels.json
+config/settings.json
+config/sources.json
+config/episode_resolvers.json
+config/*.bak
+*.bak
+
+# Generated and downloaded runtime data
+output/*
+!output/.gitkeep
+data/*
+!data/.gitkeep
+logos/*
+!logos/.gitkeep
+secure-assets/*
+!secure-assets/.gitkeep
+foundation/*
+!foundation/.gitkeep
+logs/
+
+# Development artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+README-draft.md

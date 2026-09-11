@@ -1,0 +1,17 @@
+.git
+.env
+compose.override.yaml
+config/
+data/
+output/
+logos/
+secure-assets/
+foundation/
+logs/
+docs/
+tests/
+README-draft.md
+*.bak
+__pycache__/
+*.py[cod]
+.pytest_cache/

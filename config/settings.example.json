@@ -1,0 +1,20 @@
+{
+  "schedule": {
+    "enabled": false,
+    "start_time": "02:30",
+    "interval": 6,
+    "unit": "hours",
+    "run_immediately_on_startup": false
+  },
+  "last_scheduled_run": null,
+  "last_xmltv_build": null,
+  "error_handling": {
+    "enabled": false,
+    "recipient": "",
+    "notify_source_refresh": true,
+    "notify_build": true,
+    "notify_stale_mappings": true,
+    "notify_recovery": true
+  },
+  "notification_state": {}
+}

@@ -1,0 +1,36 @@
+services:
+  wonkepg:
+    build: .
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - >-
+          import urllib.request;
+          urllib.request.urlopen("http://127.0.0.1:8000/status", timeout=5).read()
+      interval: 30s
+      timeout: 6s
+      retries: 3
+      start_period: 15s
+    ports:
+      - "${WONKEPG_BIND_ADDRESS:-127.0.0.1}:${WONKEPG_PORT:-34500}:8000"
+    volumes:
+      - ./config:/app/config
+      - ./data:/data
+      - ./output:/output
+      - ./secure-assets:/secure-assets
+      - ./foundation:/foundation:ro
+    env_file:
+      - .env
+    environment:
+      PYTHONUNBUFFERED: "1"
+      TZ: "${TZ:-UTC}"
+      SERVER_DOMAIN: "${SERVER_DOMAIN:-example.com}"
+      SECURE_ASSET_ROOT: /secure-assets
+      WONKEPG_ALLOWED_FOUNDATION_ROOTS: "${WONKEPG_ALLOWED_FOUNDATION_ROOTS:-/foundation}"
+      WONKEPG_ALLOW_PRIVATE_SOURCE_URLS: "${WONKEPG_ALLOW_PRIVATE_SOURCE_URLS:-false}"
+      WONKEPG_ALLOWED_SOURCE_HOSTS: "${WONKEPG_ALLOWED_SOURCE_HOSTS:-}"
+      WONKEPG_COOKIE_SECURE: "${WONKEPG_COOKIE_SECURE:-false}"
+      WONKEPG_SESSION_MINUTES: "${WONKEPG_SESSION_MINUTES:-480}"

@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "count": 2,
+  "channels": [
+    {
+      "channel_id": "foundation.news",
+      "number": "101",
+      "name": "Example News",
+      "pretty_name": "Example News",
+      "group": "News",
+      "logo": "https://assets.example.com/wonkepg/logos/00101-logo.png",
+      "baseline": {
+        "source": "baseline-default",
+        "channel_id": "schedule.news",
+        "status": "valid"
+      },
+      "enrichment_1": {
+        "source": "enrichment-1",
+        "channel_id": "metadata.news"
+      },
+      "enrichment_2": null
+    },
+    {
+      "channel_id": "foundation.movies",
+      "number": "202",
+      "name": "Example Movies",
+      "pretty_name": "Example Movies",
+      "group": "Movies",
+      "logo": null,
+      "baseline": {
+        "source": "alternate-schedule",
+        "channel_id": "schedule.movies",
+        "status": "valid"
+      },
+      "enrichment_1": null,
+      "enrichment_2": {
+        "source": "enrichment-2",
+        "channel_id": "metadata.movies"
+      }
+    }
+  ]
+}

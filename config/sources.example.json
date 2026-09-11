@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "foundation": {
+    "configured_m3u": "/foundation/channels.m3u"
+  },
+  "baseline": {
+    "default_source": "baseline-default"
+  },
+  "schedule_sources": {
+    "baseline-default": {
+      "url": "https://guide.example.com/baseline.xml.gz",
+      "provider_name": "Primary Schedule"
+    },
+    "alternate-schedule": {
+      "url": "https://guide.example.com/alternate.xml.gz",
+      "provider_name": "Alternate Schedule"
+    }
+  },
+  "enrichment_1": {
+    "url": "https://guide.example.com/enrichment-one.xml.gz",
+    "provider_name": "Metadata Source One"
+  },
+  "enrichment_2": {
+    "primary_url": "https://guide.example.com/enrichment-two.xml.gz",
+    "secondary_url": "https://guide.example.com/enrichment-two-local.xml.gz",
+    "provider_name": "Metadata Source Two"
+  }
+}

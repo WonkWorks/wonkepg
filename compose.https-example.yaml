@@ -1,0 +1,9 @@
+# Optional example override for an externally authenticated HTTPS proxy.
+# The proxy itself is intentionally not bundled with core WonkEPG.
+services:
+  wonkepg:
+    ports:
+      - "127.0.0.1:${WONKEPG_PORT:-34500}:8000"
+    environment:
+      WONKEPG_COOKIE_SECURE: "true"
+      SERVER_DOMAIN: "${SERVER_DOMAIN:-example.com}"
