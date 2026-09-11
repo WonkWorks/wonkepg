@@ -21,6 +21,12 @@ IPTV streams ─► Threadfin / Dispatcharr ──────┼──► Emby
 
 These products are examples of compatible neighboring tools, not dependencies. WonkEPG also fits beside TVHeadend or any workflow that can consume standard XMLTV.
 
+### WonkEPG in action
+
+![WonkEPG channel mapping interface](docs/images/wonkepg-ui.png)
+
+*Choose schedule authority per channel, layer in compatible enrichment sources, and publish one stable XMLTV feed downstream.*
+
 ## Reconciliation, not concatenation
 
 **WonkEPG is not an XML concatenator.** Traditional XMLTV merging commonly combines schedules or chooses/replaces a programme record when sources overlap. WonkEPG matches records that describe the same airing, then enriches the canonical programme field by field while retaining the selected schedule authority.
@@ -48,7 +54,17 @@ For example, a Bravo mapping might use one source such as Hive for schedule auth
 
 For a DVR, XMLTV is operational data, not just grid decoration. Depending on the consumer, metadata quality can influence series recording, season and episode identity, repeat detection, new-airing behavior, duplicate suppression, library classification, recording names, scheduling horizon, descriptions, artwork, and ratings.
 
+![Enriched WonkEPG data displayed in a Plex Live TV guide](docs/images/plex-guide.png)
+
+*The same channel grid becomes substantially more useful when the downstream consumer can identify seasons, episodes, first-run airings, and recurring programmes.*
+
 WonkEPG produces XMLTV intended to improve DVR metadata quality and compatibility. It cannot control proprietary consumer behavior or guarantee that every DVR interprets every XMLTV field identically.
+
+### From guide data to DVR behavior
+
+![DVR schedule populated from enriched WonkEPG metadata](docs/images/plex-dvr-schedule.png)
+
+*In this reference deployment, enriched episode identity is carried through to recurring DVR schedules for reality, news, comedy, and other episodic programming.*
 
 ## What defines WonkEPG
 
